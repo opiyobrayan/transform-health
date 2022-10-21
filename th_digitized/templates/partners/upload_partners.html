@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<style>
+    /* body{
+      background-image:url("{% static 'transform_background.jfif' %}");
+      background-repeat:no-repeat;
+      background-size: cover;
+    } */
+    .t3-middlebar {
+    background: #008080;
+    border-bottom: 2px solid #d0a243;
+    color:blue;
+    height: 50px;
+    line-height: 40px;
+    font-size: 20px;
+    }
+    .t4-middlebar {
+    color:blue;
+    font-size: 20px;
+    }
+  
+      * {
+        box-sizing: border-box;
+      }
+      
+  
+      
+      @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+    };
+    .card{
+        width: 100%;
+
+    }
+  }
+</style>
+<div class="container" >
+    <div class="card" style="background:rgb(0, 255, 234);width:1000px;font-size:150%;color:blue">
+        <h5 class="card-header t3-middlebar" style="font-size:150%;color:aliceblue">Upload A File</h5>
+        <div class="card-body">
+            <p> Please Make sure to folllow this order;</p>
+            {% if messages %}
+                
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type="file" name="myfile">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+
+                </form>
+            {% else %}
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="file" name="myfile">
+                <button type="submit" class="btn btn-primary">Submit</button>
+
+            </form>
+            {% endif %}
+
+        </div>
+      </div>
+
+</div>
+{% endblock %}

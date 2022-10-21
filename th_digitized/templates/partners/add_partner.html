@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+{% load static %}
+<style>
+    /* body{
+      background-image:url("{% static 'transform_background.jfif' %}");
+      background-repeat:no-repeat;
+      background-size: cover;
+    } */
+    .t3-middlebar {
+    background: #008080;
+    border-bottom: 2px solid #d0a243;
+    color:blue;
+    height: 50px;
+    line-height: 40px;
+    font-size: 20px;
+    }
+    .t4-middlebar {
+    color:blue;
+    font-size: 20px;
+    }
+  
+      * {
+        box-sizing: border-box;
+      }
+      
+  
+      
+      @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+    };
+    .card{
+        width: 100%;
+
+    }
+  }
+</style>
+<div class="container">
+<div class="card" style=" background:rgb(0, 255, 234);width:1000px;font-size:150%;color:red"  >
+    <h4 class="card-header t3-middlebar" style="font-size:150%;color:aliceblue">Add  Partner</h4>
+    <div class="card-body">
+        {% include 'partners/messages.html' %}
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form|crispy}}
+        <button type="submit" class="btn btn-primary">Submit</button>
+        </form>     
+    </div>
+</div>
+</div>
+{% endblock %}

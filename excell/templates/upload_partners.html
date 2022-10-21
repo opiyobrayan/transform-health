@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+<div class="container">
+    <div class="card">
+        <h5 class="card-header">Upload form</h5>
+        <p class="card-header"> make sure it's in csv(comma separated values) format</p>
+        <div class="card-body">
+            <form method="POST" action="" enctype='multipart/form-data'>
+                {% csrf_token %}
+                {{forms|crispy}}
+                <button type="submit" class="btn btn-primary">Send</button>
+            </form>
+        </div>
+      </div>
+</div>
+{% endblock %}

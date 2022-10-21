@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg" aria-expanded="false" >
+    <div class="container-fluid"> 
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">    
+       <ul class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size:150%;color:aliceblue">
+              Partners
+            </a>
+        <ul class="dropdown-menu">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'add-partner' %}">Add Partners</a>
+            </li>
+           
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'upload-partners' %}">Upload Partners</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Download</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'partners-list' %}">Table form</a>
+          </li>       
+        </ul>
+    </ul>
+    <ul>
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size:150%;color:aliceblue">
+            Filter
+        </a>
+    </ul>
+    </ul>
+    
+    </div>
+    <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search organization" aria-label="Search">
+        <button class="btn btn-primary" type="submit">Search </button>
+    </form>
+    
+    </div>
+  </nav>

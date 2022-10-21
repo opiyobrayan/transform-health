@@ -1,0 +1,160 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<style>
+
+    body{
+      background-image:url("{% static 'transform_background.jfif' %}");
+      background-repeat:repeat;
+      background-size: cover;
+    }
+    /* .wrapper-hd {
+    background: rgb(0, 195, 255);
+    box-shadow: 0 0 14px rgb(0 0 0 / 10%);
+    } */
+    .t3-topbar {
+    background: #008080;
+    border-bottom: 2px solid #d0a243;
+    color: #fff;
+    height: 35px;
+    line-height: 40px;
+    font-size: 12px;
+    }
+    .t3-middlebar {
+    background: #008080;
+    border-bottom: 2px solid #d0a243;
+    color: #fff;
+    height: 60px;
+    line-height: 40px;
+    font-size: 12px;
+    }
+    .containers {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+    }
+    .rows {
+    margin-left: -16px;
+    margin-right: -16px;
+      } 
+    .topbar-right {
+    text-align: right;
+    width: 66%;
+      }
+    .topbar-right > div {
+      display: inline-block;
+      float: right;
+      }
+    .address-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-left: -16px;
+    margin-right: -16px;
+    }
+    .t3-mainnav .t3-navbar {
+    background: linear-gradient(#008080, #005454);
+    border-radius: 2px;
+    padding-left: 0;
+    padding-right: 0;
+    }
+    .t3-mainnav {
+    border: 0;
+    margin-bottom: 0;
+    border-radius: 0;
+    margin-top: -32px;
+    position: relative;
+    z-index: 10;
+}
+  
+    * {
+        box-sizing: border-box;
+      }
+      
+      /* Create three equal columns that floats next to each other */
+    .column {
+        float: left;
+        width: 49%;
+        padding: 5px;
+        height: 260px; /* Should be removed. Only for demonstration */
+    }
+      
+      /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+    } 
+     }
+     
+</style>
+<body>
+{% load static %}
+
+<div class="wrapper-hd">
+<div class="wrap t3-topbar">
+    <div class="containers">
+      <div class="rows">
+
+        <div class="topbar-left hidden-xs col-sm-6">
+            <div class="custom">
+	        <p style="text-align: center;">
+                <span style="color: #ffffff;">
+                    <a href="{% url 'workplan-list' %}"  style="color: #ffffff;" title="">Workplan </a>
+                    &nbsp; | &nbsp;<a href="{% url 'partners-list' %}"  style="color: #ffffff;">Reports </a>
+                    &nbsp; | &nbsp;<a href="{% url 'partners-list' %}"  style="color: #ffffff;" title="Repository">Activities </a>
+                    &nbsp; | &nbsp; <a href="{% url 'partners-list' %}"  style="color: #ffffff;" title="">Members </a>
+                    &nbsp; | &nbsp; <a href="http://alumni.tukenya.ac.ke" style="color: #ffffff;" title="">Alumni </a>
+                    &nbsp; | &nbsp; <a href="https://portal.tukenya.ac.ke/" target="_blank" rel="noopener noreferrer" style="color: #ffffff;" title="">Student's Portal </a>
+                    &nbsp; | &nbsp; <a href="https://staff.tukenya.ac.ke/" target="_blank" rel="noopener noreferrer" style="color: #ffffff;" title="">Staff e-portal </a>
+                   
+                </span> 
+            </p>
+            </div>
+        </div>
+        
+    </div>
+
+</div>
+<nav id="t3-mainnav" class="wrap navbar navbar-default t3-mainnav">
+<div class="t3-navbar clearfix">
+    
+</div>
+</nav>
+</div>
+<br>
+<br>
+<div class="container">
+    <div class="row">
+    
+    <h2><image src="{% static 'mainlogo1.PNG' %}" ><a href="#" style="color:blue;">TRANSFORM HEALTH COALITION (THC) KENYA</a> </h2>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="card" style='color:blue'>
+        <div class="card-header  t3-middlebar " style="bgcolor:yellow">
+          <center><h1> Objectives</h1></center>
+        </div>
+        <div class="card-body">
+            <h3 style="font-size:150%;">
+                <br>			
+                1. Laws and policies on digital health technologies to achieve UHC commitments are developed and adopted at both national and county level by 2030 <br> <br>                                                                                   			
+                2. Increased adoption and use of digital health technologies at the national and county government for access to equitable, affordable and quality health carecare;<br><br>			
+                3. Increased resources at national and county level for strengthening digital health technologies to achieve UHC commitments<br>			
+            </h3>
+            
+
+          <a href="{% url 'partners-list' %}" class="btn btn-primary">Go To Partners Page</a>
+        </div>
+      </div>
+    
+    
+</div>
+{% endblock %}
+</body>

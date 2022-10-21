@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<br>
+<br>
+<style>
+    body{
+      background-image:url("{% static 'transform_background.jfif' %}");
+      background-repeat:no-repeat;
+      background-size: cover;
+    }
+    .t3-middlebar {
+    background: #008080;
+    border-bottom: 2px solid #d0a243;
+    color:blue;
+    height: 80px;
+    line-height: 40px;
+    font-size: 20px;
+    }
+  
+      * {
+        box-sizing: border-box;
+      }
+      
+      /* Create three equal columns that floats next to each other */
+      .column {
+        float: left;
+        width: 33.33%;
+        padding: 10px;
+        height: 500px; /* Should be removed. Only for demonstration */
+      }
+      
+      /* Clear floats after the columns */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+    };
+    .card{
+        width: 100%;
+
+    }
+  }
+</style>
+<body>
+    <center>
+    <div class="card" style=" background:rgb(132, 0, 255);width:1000px" >
+        <div class="card-header t3-middlebar">
+          {% include 'partners/partners_nav.html' %}
+        </div>
+        <div class="card-body">
+            <div class="container">
+                <div class="rows">
+                {% for partner in all_partners %}
+                
+                <div class="column">
+                <div class="card" style="width: 18rem;">
+                    {% if partner.image %}
+                        <img src="{{partner.image.url}}" class="card-img-top" alt="..." style="width:200px;height:100px;padding:7px;">
+                    {% else %}
+                        <img src="#" class="card-img-top" alt="..." style="width:200px;height:100px;padding:7px;">
+                    {% endif %}
+                    <div class="card-body">
+                      <h5 class="card-title">{{partner|truncatechars:17}}</h5>
+                      <h5 class="card-title">{{partner.headquater}}</h5>
+                      <p class="card-text">{{partner.bio|slice:":200"}}..</p>
+                      <a href="{{partner.website}}" class="btn btn-primary">Visit website</a>
+                    </div>
+                </div>
+                </div>
+                
+                {% endfor %}
+                </div>
+            </div>      
+          
+        </div>
+        <a href="#" class="btn btn-primary">Return To Home Page</a>
+    </div>
+</center>
+</body>
+
+{% endblock %}
